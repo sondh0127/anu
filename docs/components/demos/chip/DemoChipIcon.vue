@@ -24,6 +24,7 @@
     <AChip
       color="danger"
       icon="i-bx-trash"
+      append-icon="i-bx-trash"
     >
       <span>Remove</span>
     </AChip>
