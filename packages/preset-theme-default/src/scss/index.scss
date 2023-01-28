@@ -9,65 +9,79 @@ body {
 $body-color: hsla(var(--a-base-color), 0.68);
 
 :root {
-    --a-base-color: 0, 10%, 20%;
-    --a-layer: 0, 0%, 100%;
-    --a-border-opacity: 0.12;
-    --a-loader-overlay-bg: hsla(var(--a-layer),var(--a-loader-overlay-bg-opacity));
-    --a-loader-overlay-bg-opacity: 0.85;
-    --a-overlay-color: 0, 0%, 0%;
-    --a-overlay-opacity: 0.35;
+  --a-base-color: 0, 10%, 20%;
+  --a-layer: 0, 0%, 100%;
+  --a-border-opacity: 0.12;
+  --a-loader-overlay-bg: hsla(var(--a-layer), var(--a-loader-overlay-bg-opacity));
+  --a-loader-overlay-bg-opacity: 0.85;
+  --a-overlay-color: 0, 0%, 0%;
+  --a-overlay-opacity: 0.35;
 
-    --a-primary: 265, 97.7%, 66.3%;
-    --a-success: 94.5, 100%, 39.6%;
-    --a-info: 200.1, 100%, 54.3%;
-    --a-warning: 42.4, 100%, 50%;
-    --a-danger: 358.3, 100%, 64.9%;
+  --a-primary: 210, 100%, 45%;
+  --a-primary-light: 210, 79%, 95%;
+  --a-text-primary-light: 210, 100%, 45%;
 
-    // Contrast colors
-    // --a-contrast-dark: hsla(var(--a-base-color), var(--a-text-emphasis-medium-opacity));
-    --a-contrast-dark: #000;
-    --a-contrast-light: #fff;
+  --a-success: 144, 54%, 49%;
+  --a-success-light: 146, 54%, 95%;
+  --a-text-success-light: 143, 54%, 35%;
 
-    // text emphasis
-    --a-text-emphasis-high-opacity: 0.87;
-    --a-text-emphasis-medium-opacity: 0.68;
-    --a-text-emphasis-light-opacity: 0.38;
+  --a-info: 200.1, 100%, 54.3%;
+  --a-info-light: 200.1, 100%, 54.3%;
+  --a-text-info-light: 200.1, 100%, 54.3%;
 
-    // Typography
-    --a-title-color: var(--a-base-color);
-    --a-subtitle-color: var(--a-base-color);
-    --a-title-opacity: var(--a-text-emphasis-high-opacity);
-    --a-subtitle-opacity: var(--a-text-emphasis-light-opacity);
+  --a-warning: 40, 92%, 53%;
+  --a-warning-light: 41, 92%, 95%;
+  --a-text-warning-light: 40, 81%, 37%;
 
-    // SECTION Components
+  --a-danger: 0, 89%, 62%;
+  --a-danger-light: 0, 89%, 96%;
+  --a-text-danger-light: 0, 89%, 62%;
 
-    // 👉 Card
-    --a-card-spacer: 1rem;
+  // Contrast colors
+  // --a-contrast-dark: hsla(var(--a-base-color), var(--a-text-emphasis-medium-opacity));
+  --a-contrast-dark: #000;
+  --a-contrast-light: #fff;
 
-    // 👉 Spinner
-    --a-spinner-size: 1.2em;
+  // text emphasis
+  --a-text-emphasis-high-opacity: 0.87;
+  --a-text-emphasis-medium-opacity: 0.68;
+  --a-text-emphasis-light-opacity: 0.38;
 
-    // 👉 Switch
-    --a-switch-track-size: 3em;
-    --a-switch-thumb-margin: .25em;
-    --a-switch-default-color: 220, 13%, 91%;
-    /*
+  // Typography
+  --a-title-color: var(--a-base-color);
+  --a-subtitle-color: var(--a-base-color);
+  --a-title-opacity: var(--a-text-emphasis-high-opacity);
+  --a-subtitle-opacity: var(--a-text-emphasis-light-opacity);
+
+  // SECTION Components
+
+  // 👉 Card
+  --a-card-spacer: 1rem;
+
+  // 👉 Spinner
+  --a-spinner-size: 1.2em;
+
+  // 👉 Switch
+  --a-switch-track-size: 3em;
+  --a-switch-thumb-margin: .25em;
+  --a-switch-default-color: 220, 13%, 91%;
+  /*
       ℹ️ Value of this property is => hsla(var(--a-base-color), var(--a-text-emphasis-medium-opacity)).
       As this will be always on light background we will keep it static and choose color from light scheme
     */
-    --a-switch-icon-color: hsla(0, 10%, 20%, 0.68);
+  --a-switch-icon-color: hsla(0, 10%, 20%, 0.68);
 
-    // 👉 List
-    // ℹ️ We might not need `--a-list-gap` this if we are using just `AList`, however when we use list inside another component this will be helpful
-    // #region a-list-css-vars
-    --a-list-gap: 0rem;
-    --a-list-item-gap: 0.75rem;    
-    --a-list-item-padding: 0.5rem 1rem;
-    --a-list-item-margin: 0rem;
-    --a-list-item-min-height: 2.5rem;
-    // #endregion a-list-css-vars
+  // 👉 List
+  // ℹ️ We might not need `--a-list-gap` this if we are using just `AList`, however when we use list inside another component this will be helpful
+  // #region a-list-css-vars
+  --a-list-gap: 0rem;
+  --a-list-item-gap: 0.75rem;
+  --a-list-item-padding: 0.5rem 1rem;
+  --a-list-item-margin: 0rem;
+  --a-list-item-min-height: 2.5rem;
+  // #endregion a-list-css-vars
 
-    // !SECTION
+  // !SECTION
 }
 
 :root.dark {
@@ -84,8 +98,8 @@ $body-color: hsla(var(--a-base-color), 0.68);
   // SECTION Components
 
   // 👉 Switch
-    --a-switch-default-color: 0, 0%, 16%;
-    
+  --a-switch-default-color: 0, 0%, 16%;
+
   // !SECTION
 }
 
@@ -95,7 +109,7 @@ body {
   color: $body-color;
 
   // Disable mobile tap blue color
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 h1,
@@ -110,20 +124,31 @@ h6 {
 // 👉 Misc
 
 @keyframes shake {
-  0%   {transform: translateX(0);}
-  25%  {transform: translateX(1px);}
-  50%  {transform: translateX(-1px);}
-  100% {transform: translateX(0);}
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(1px);
+  }
+
+  50% {
+    transform: translateX(-1px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .a-base-input-label.text-danger {
-    animation-name: shake;
-    animation-duration: 0.35s;
+  animation-name: shake;
+  animation-duration: 0.35s;
 }
 
 // Set default border-color for `hr` element for color scheme compatibility
 hr {
-  border-color: hsla(var(--a-base-color),var(--a-border-opacity))
+  border-color: hsla(var(--a-base-color), var(--a-border-opacity))
 }
 
 // Remove outline
@@ -138,7 +163,7 @@ textarea {
 
 // ℹ️ Remove autocomplete styles
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,

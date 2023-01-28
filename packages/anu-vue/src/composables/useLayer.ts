@@ -120,12 +120,24 @@ export const useLayer = () => {
 
       else if (propVariant === 'light') {
         // Background
-        styles.push({ background: `hsla(var(--a-${propColor}),var(--un-bg-opacity))` })
-        classes.push('[--un-bg-opacity:0.15]')
+        if (true) {
+          styles.push({ background: `hsla(var(--a-${propColor}-${propVariant}),var(--un-bg-opacity))` })
+          classes.push('[--un-bg-opacity:1]')
+        }
+        else {
+          styles.push({ background: `hsla(var(--a-${propColor}),var(--un-bg-opacity))` })
+          classes.push('[--un-bg-opacity:0.15]')
+        }
 
         // text
-        if (propColor !== undefined && propColor !== null)
-          classes.push(`text-${propColor}`)
+        if (true) {
+          styles.push({ color: `hsla(var(--a-text-${propColor}-${propVariant}),var(--un-text-opacity))` })
+          classes.push('[--un-text-opacity:1]')
+        }
+        else {
+          if (propColor !== undefined && propColor !== null)
+            classes.push(`text-${propColor}`)
+        }
 
         // We have set loader overlay color above (before _isThemeColor condition)
       }

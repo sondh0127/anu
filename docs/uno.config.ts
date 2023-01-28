@@ -19,7 +19,12 @@ export default defineConfig({
 
     // anu-vue presets
     presetAnu(),
-    presetThemeDefault(),
+    presetThemeDefault({
+      shortcutOverrides: {
+        'a-chip': 'rounded-15px inline-flex items-center gap-x-4px px-8px py-2px h-fit whitespace-nowrap text-12px leading-18px font-500',
+        'a-chip-disabled': 'opacity-50 pointer-events-none',
+      },
+    }),
   ],
   transformers: [
     transformerVariantGroup(),
