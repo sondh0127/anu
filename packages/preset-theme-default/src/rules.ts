@@ -3,6 +3,7 @@ import { parseColor } from '@unocss/preset-mini/utils'
 
 const rules: Preset['rules'] = [
   // 👉 - Text Color
+  // https://github.com/onu-ui/onu-ui/blob/main/packages/preset/src/rules/index.ts#L12
   [/^a-t-(.*)$/, ([, body]: string[], { theme }) => {
     const color = parseColor(body, theme)
     if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
