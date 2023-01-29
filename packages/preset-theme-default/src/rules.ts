@@ -1,6 +1,37 @@
 import type { Preset } from '@unocss/core'
+import { parseColor } from '@unocss/preset-mini/utils'
 
 const rules: Preset['rules'] = [
+  // 👉 - Text Color
+  [/^a-t-(.*)$/, ([, body]: string[], { theme }) => {
+    const color = parseColor(body, theme)
+    if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
+      return {
+        '--a-t-c-context': `${color.cssColor.components.join(',')}`,
+      }
+    }
+    else {
+      return {
+        '--a-t-c-context': color?.color,
+      }
+    }
+  }],
+
+  // 👉 - Color
+  [/^a-(.*)$/, ([, body]: string[], { theme }) => {
+    const color = parseColor(body, theme)
+    if (color?.cssColor?.type === 'rgb' && color.cssColor.components) {
+      return {
+        '--a-c-context': `${color.cssColor.components.join(',')}`,
+      }
+    }
+    else {
+      return {
+        '--a-c-context': color?.color,
+      }
+    }
+  }],
+
   // Spacing
   [
     /^spacing-(\d+)$/,

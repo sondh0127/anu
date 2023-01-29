@@ -10,25 +10,41 @@ interface PresetOptions {
   shortcutOverrides?: Exclude<Preset['shortcuts'], undefined>
 }
 
+const themeColors = {
+  context: 'var(--a-c-context)',
+  textContext: 'var(--a-t-c-context)',
+  primary: 'hsl(var(--a-primary))',
+  primaryLight: 'hsl(var(--a-primary-light))',
+  textPrimaryLight: 'hsl(var(--a-text-primary-light))',
+  success: 'hsl(var(--a-success))',
+  successLight: 'hsl(var(--a-success-light))',
+  textSuccessLight: 'hsl(var(--a-text-success-light))',
+  info: 'hsl(var(--a-info))',
+  infoLight: 'hsl(var(--a-info-light))',
+  textInfoLight: 'hsl(var(--a-text-info-light))',
+  warning: 'hsl(var(--a-warning))',
+  warningLight: 'hsl(var(--a-warning-light))',
+  textWarningLight: 'hsl(var(--a-text-warning-light))',
+  danger: 'hsl(var(--a-danger))',
+  dangerLight: 'hsl(var(--a-danger-light))',
+  textDangerLight: 'hsl(var(--a-text-danger-light))',
+  a: { border: 'hsla(var(--a-base-color),var(--a-border-opacity))' },
+}
+
 // TODO: Pass this to Anu plugin so that it can use the classes defined by theme preset
-export const colors = ['primary', 'success', 'info', 'warning', 'danger'] as const
+export const colors = Object.keys(themeColors) as (keyof typeof themeColors)[]
 export type Colors = typeof colors
 
 export function presetThemeDefault(options: PresetOptions = {}): Preset {
   return {
     name: '@anu-vue/preset-theme-default',
     theme: {
-      colors: {
-        primary: 'hsl(var(--a-primary))',
-        success: 'hsl(var(--a-success))',
-        info: 'hsl(var(--a-info))',
-        warning: 'hsl(var(--a-warning))',
-        danger: 'hsl(var(--a-danger))',
-        a: { border: 'hsla(var(--a-base-color),var(--a-border-opacity))' },
-      },
+      colors: themeColors,
     },
     safelist: [
       ...colors.map(c => `[--a-layer-color:hsla(var(--a-${c}),var(--un-bg-opacity,1))]`),
+      ...colors.map(c => `a-${c}`),
+      ...colors.map(c => `a-t-${c}`),
       ...colors.map(c => `bg-${c}`),
       ...colors.map(c => `hover:bg-${c}`),
 
